@@ -1,0 +1,33 @@
+[gd_scene format=3 uid="uid://bjciovl43cn5n"]
+
+[ext_resource type="Script" uid="uid://ey3p6mhkyln5" path="res://scripts/play.gd" id="1_5p55f"]
+[ext_resource type="Texture2D" uid="uid://cceesv0t58nw8" path="res://assets/images/player/image (1).png" id="2_r67kn"]
+
+[node name="Control" type="Control" unique_id=868801133]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=261320536]
+layout_mode = 0
+offset_right = 1290.0
+offset_bottom = 722.0
+color = Color(0, 0, 0, 1)
+
+[node name="Button" type="Button" parent="." unique_id=998240013]
+layout_mode = 0
+offset_left = 551.0
+offset_top = 392.0
+offset_right = 748.0
+offset_bottom = 462.0
+text = "Play"
+script = ExtResource("1_5p55f")
+
+[node name="Image(1)" type="Sprite2D" parent="." unique_id=1859933319]
+position = Vector2(637, 217)
+texture = ExtResource("2_r67kn")
+
+[connection signal="pressed" from="Button" to="Button" method="_on_pressed"]

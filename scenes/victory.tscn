@@ -1,0 +1,26 @@
+[gd_scene format=3 uid="uid://rrlouulxn00y"]
+
+[ext_resource type="Script" uid="uid://bo5p5yb3ydeub" path="res://scripts/level.gd" id="1_aeqvq"]
+[ext_resource type="Texture2D" uid="uid://dc68cgg8ewspo" path="res://assets/images/backgrounds/Background.png" id="2_rlw0o"]
+
+[node name="Level" type="Node2D" unique_id=771642976]
+scale = Vector2(3, 3)
+script = ExtResource("1_aeqvq")
+nextScene = "level2"
+
+[node name="Background" type="Sprite2D" parent="." unique_id=1587705976]
+texture_filter = 1
+position = Vector2(213.92596, 120.416664)
+scale = Vector2(0.73816884, 0.7381687)
+texture = ExtResource("2_rlw0o")
+
+[node name="Label" type="Label" parent="." unique_id=118431052]
+texture_filter = 1
+offset_left = 155.0
+offset_top = 109.333336
+offset_right = 405.0
+offset_bottom = 163.66667
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 5
+text = "Thanks for playing!"

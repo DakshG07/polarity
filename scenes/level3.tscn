@@ -1,0 +1,671 @@
+[gd_scene format=4 uid="uid://c2k8rgqopaqw5"]
+
+[ext_resource type="Script" uid="uid://bo5p5yb3ydeub" path="res://scripts/level.gd" id="1_b72m1"]
+[ext_resource type="Texture2D" uid="uid://dc68cgg8ewspo" path="res://assets/images/backgrounds/Background.png" id="2_5mhml"]
+[ext_resource type="Texture2D" uid="uid://dpqi6ev77xkb5" path="res://assets/images/tilemap/tilemap.png" id="3_rupth"]
+[ext_resource type="PackedScene" uid="uid://yprsj1it0iiw" path="res://scenes/player.tscn" id="4_6qt4k"]
+[ext_resource type="Script" uid="uid://bchmcr3b3i1qo" path="res://scripts/field.gd" id="5_fh4ka"]
+[ext_resource type="Texture2D" uid="uid://ddixdogwtla4h" path="res://assets/images/plates/posBoost (3).png" id="6_6qt4k"]
+[ext_resource type="Script" uid="uid://by4b4fhai5j7r" path="res://scripts/activate.gd" id="7_5mhml"]
+[ext_resource type="Texture2D" uid="uid://b84nu5je5u8st" path="res://assets/images/plates/negBoostSideways.png" id="8_fh4ka"]
+[ext_resource type="Script" uid="uid://bt3ntekpmxw6i" path="res://scripts/next_level.gd" id="9_6qt4k"]
+[ext_resource type="Texture2D" uid="uid://c0tnfiwx44eq7" path="res://assets/images/plates/posFinal.png" id="10_fh4ka"]
+[ext_resource type="Texture2D" uid="uid://b722ty3080i20" path="res://assets/images/plates/negFinal.png" id="11_fh4ka"]
+[ext_resource type="AudioStream" uid="uid://drhyafr06eimm" path="res://assets/audio/Pokémon Sword & Shield - Gym Leader Piers Battle Music (HQ).mp3" id="12_qewby"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_w7c3h"]
+texture = ExtResource("3_rupth")
+0:0/0 = 0
+0:1/0 = 0
+1:0/0 = 0
+1:1/0 = 0
+2:0/0 = 0
+2:1/0 = 0
+3:0/0 = 0
+3:1/0 = 0
+4:0/0 = 0
+4:1/0 = 0
+5:0/0 = 0
+5:1/0 = 0
+6:0/0 = 0
+6:1/0 = 0
+7:0/0 = 0
+7:1/0 = 0
+8:0/0 = 0
+8:1/0 = 0
+9:0/0 = 0
+9:1/0 = 0
+10:0/0 = 0
+10:1/0 = 0
+11:0/0 = 0
+11:1/0 = 0
+12:0/0 = 0
+12:1/0 = 0
+13:0/0 = 0
+13:1/0 = 0
+14:0/0 = 0
+14:1/0 = 0
+15:0/0 = 0
+15:1/0 = 0
+16:0/0 = 0
+16:1/0 = 0
+17:0/0 = 0
+17:1/0 = 0
+18:0/0 = 0
+18:1/0 = 0
+19:0/0 = 0
+19:1/0 = 0
+20:0/0 = 0
+20:1/0 = 0
+21:0/0 = 0
+21:1/0 = 0
+22:0/0 = 0
+22:1/0 = 0
+23:0/0 = 0
+23:1/0 = 0
+24:0/0 = 0
+24:1/0 = 0
+25:0/0 = 0
+25:1/0 = 0
+26:0/0 = 0
+26:1/0 = 0
+27:0/0 = 0
+27:1/0 = 0
+28:0/0 = 0
+28:1/0 = 0
+29:0/0 = 0
+29:1/0 = 0
+0:2/0 = 0
+0:3/0 = 0
+1:2/0 = 0
+1:3/0 = 0
+2:2/0 = 0
+2:3/0 = 0
+3:2/0 = 0
+3:3/0 = 0
+4:2/0 = 0
+5:2/0 = 0
+6:2/0 = 0
+6:3/0 = 0
+7:2/0 = 0
+7:3/0 = 0
+8:2/0 = 0
+8:3/0 = 0
+9:2/0 = 0
+9:3/0 = 0
+10:2/0 = 0
+10:3/0 = 0
+11:2/0 = 0
+11:3/0 = 0
+12:2/0 = 0
+12:3/0 = 0
+13:2/0 = 0
+13:3/0 = 0
+14:2/0 = 0
+14:3/0 = 0
+15:2/0 = 0
+15:3/0 = 0
+16:2/0 = 0
+16:3/0 = 0
+17:2/0 = 0
+17:3/0 = 0
+18:2/0 = 0
+18:3/0 = 0
+19:2/0 = 0
+19:3/0 = 0
+20:2/0 = 0
+20:3/0 = 0
+21:2/0 = 0
+21:3/0 = 0
+22:2/0 = 0
+23:2/0 = 0
+24:2/0 = 0
+24:3/0 = 0
+25:2/0 = 0
+25:3/0 = 0
+26:2/0 = 0
+26:3/0 = 0
+27:2/0 = 0
+27:3/0 = 0
+28:2/0 = 0
+28:3/0 = 0
+29:2/0 = 0
+29:3/0 = 0
+0:4/0 = 0
+0:5/0 = 0
+1:4/0 = 0
+1:5/0 = 0
+2:4/0 = 0
+2:5/0 = 0
+3:4/0 = 0
+3:5/0 = 0
+4:4/0 = 0
+4:5/0 = 0
+5:4/0 = 0
+5:5/0 = 0
+6:4/0 = 0
+6:5/0 = 0
+7:4/0 = 0
+7:5/0 = 0
+8:4/0 = 0
+8:5/0 = 0
+9:4/0 = 0
+9:5/0 = 0
+10:4/0 = 0
+10:5/0 = 0
+11:4/0 = 0
+11:5/0 = 0
+12:4/0 = 0
+12:5/0 = 0
+13:4/0 = 0
+13:5/0 = 0
+14:4/0 = 0
+14:5/0 = 0
+15:4/0 = 0
+15:5/0 = 0
+16:4/0 = 0
+16:5/0 = 0
+17:4/0 = 0
+17:5/0 = 0
+18:4/0 = 0
+18:5/0 = 0
+19:4/0 = 0
+19:5/0 = 0
+20:4/0 = 0
+20:5/0 = 0
+21:4/0 = 0
+21:5/0 = 0
+22:4/0 = 0
+22:5/0 = 0
+23:4/0 = 0
+23:5/0 = 0
+24:4/0 = 0
+24:5/0 = 0
+25:4/0 = 0
+25:5/0 = 0
+26:4/0 = 0
+26:5/0 = 0
+27:4/0 = 0
+27:5/0 = 0
+28:4/0 = 0
+28:5/0 = 0
+29:4/0 = 0
+29:5/0 = 0
+0:6/0 = 0
+0:7/0 = 0
+1:6/0 = 0
+1:7/0 = 0
+2:6/0 = 0
+2:7/0 = 0
+3:6/0 = 0
+3:7/0 = 0
+4:6/0 = 0
+4:7/0 = 0
+5:6/0 = 0
+5:7/0 = 0
+6:6/0 = 0
+6:7/0 = 0
+7:6/0 = 0
+7:7/0 = 0
+8:6/0 = 0
+8:7/0 = 0
+9:6/0 = 0
+9:7/0 = 0
+10:6/0 = 0
+10:7/0 = 0
+11:6/0 = 0
+11:7/0 = 0
+12:6/0 = 0
+12:7/0 = 0
+13:6/0 = 0
+13:7/0 = 0
+14:6/0 = 0
+14:7/0 = 0
+15:6/0 = 0
+15:7/0 = 0
+16:6/0 = 0
+16:7/0 = 0
+17:6/0 = 0
+17:7/0 = 0
+18:6/0 = 0
+18:6/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+18:7/0 = 0
+18:7/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+19:6/0 = 0
+19:6/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+19:7/0 = 0
+19:7/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+20:6/0 = 0
+20:6/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+20:7/0 = 0
+20:7/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+21:6/0 = 0
+21:6/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+21:7/0 = 0
+21:7/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+22:6/0 = 0
+22:6/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+22:7/0 = 0
+22:7/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+23:6/0 = 0
+23:6/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+23:7/0 = 0
+23:7/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+24:6/0 = 0
+24:7/0 = 0
+25:6/0 = 0
+25:7/0 = 0
+26:6/0 = 0
+26:7/0 = 0
+27:6/0 = 0
+27:7/0 = 0
+28:6/0 = 0
+28:7/0 = 0
+29:6/0 = 0
+29:7/0 = 0
+0:8/0 = 0
+0:9/0 = 0
+1:8/0 = 0
+1:9/0 = 0
+2:8/0 = 0
+2:9/0 = 0
+3:8/0 = 0
+3:9/0 = 0
+4:8/0 = 0
+4:9/0 = 0
+5:8/0 = 0
+5:9/0 = 0
+6:8/0 = 0
+6:9/0 = 0
+7:8/0 = 0
+7:9/0 = 0
+8:8/0 = 0
+8:9/0 = 0
+9:8/0 = 0
+9:9/0 = 0
+10:8/0 = 0
+10:9/0 = 0
+11:8/0 = 0
+11:9/0 = 0
+12:8/0 = 0
+12:9/0 = 0
+13:8/0 = 0
+13:9/0 = 0
+14:8/0 = 0
+14:9/0 = 0
+15:8/0 = 0
+15:9/0 = 0
+16:8/0 = 0
+16:9/0 = 0
+17:8/0 = 0
+17:9/0 = 0
+18:8/0 = 0
+18:9/0 = 0
+19:8/0 = 0
+19:9/0 = 0
+20:8/0 = 0
+20:9/0 = 0
+21:8/0 = 0
+21:9/0 = 0
+22:8/0 = 0
+23:8/0 = 0
+24:8/0 = 0
+24:9/0 = 0
+25:8/0 = 0
+25:9/0 = 0
+26:8/0 = 0
+27:8/0 = 0
+28:8/0 = 0
+29:8/0 = 0
+0:10/0 = 0
+1:10/0 = 0
+2:10/0 = 0
+3:10/0 = 0
+4:10/0 = 0
+5:10/0 = 0
+6:10/0 = 0
+7:10/0 = 0
+8:10/0 = 0
+9:10/0 = 0
+10:10/0 = 0
+11:10/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_w8frs"]
+physics_layer_0/collision_layer = 2
+sources/81 = SubResource("TileSetAtlasSource_w7c3h")
+tile_proxies/coords_level = [[0, Vector2i(0, 0)], [81, Vector2i(0, 0)], [0, Vector2i(0, 1)], [81, Vector2i(0, 1)], [0, Vector2i(1, 0)], [81, Vector2i(1, 0)], [0, Vector2i(1, 1)], [81, Vector2i(1, 1)], [1, Vector2i(0, 0)], [81, Vector2i(2, 0)], [1, Vector2i(0, 1)], [81, Vector2i(2, 1)], [1, Vector2i(1, 0)], [81, Vector2i(3, 0)], [1, Vector2i(1, 1)], [81, Vector2i(3, 1)], [2, Vector2i(0, 0)], [81, Vector2i(4, 0)], [2, Vector2i(0, 1)], [81, Vector2i(4, 1)], [2, Vector2i(1, 0)], [81, Vector2i(5, 0)], [2, Vector2i(1, 1)], [81, Vector2i(5, 1)], [3, Vector2i(0, 0)], [81, Vector2i(6, 0)], [3, Vector2i(0, 1)], [81, Vector2i(6, 1)], [3, Vector2i(1, 0)], [81, Vector2i(7, 0)], [3, Vector2i(1, 1)], [81, Vector2i(7, 1)], [4, Vector2i(0, 0)], [81, Vector2i(8, 0)], [4, Vector2i(0, 1)], [81, Vector2i(8, 1)], [4, Vector2i(1, 0)], [81, Vector2i(9, 0)], [4, Vector2i(1, 1)], [81, Vector2i(9, 1)], [5, Vector2i(0, 0)], [81, Vector2i(10, 0)], [5, Vector2i(0, 1)], [81, Vector2i(10, 1)], [5, Vector2i(1, 0)], [81, Vector2i(11, 0)], [5, Vector2i(1, 1)], [81, Vector2i(11, 1)], [6, Vector2i(0, 0)], [81, Vector2i(12, 0)], [6, Vector2i(0, 1)], [81, Vector2i(12, 1)], [6, Vector2i(1, 0)], [81, Vector2i(13, 0)], [6, Vector2i(1, 1)], [81, Vector2i(13, 1)], [7, Vector2i(0, 0)], [81, Vector2i(14, 0)], [7, Vector2i(0, 1)], [81, Vector2i(14, 1)], [7, Vector2i(1, 0)], [81, Vector2i(15, 0)], [7, Vector2i(1, 1)], [81, Vector2i(15, 1)], [8, Vector2i(0, 0)], [81, Vector2i(16, 0)], [8, Vector2i(0, 1)], [81, Vector2i(16, 1)], [8, Vector2i(1, 0)], [81, Vector2i(17, 0)], [8, Vector2i(1, 1)], [81, Vector2i(17, 1)], [9, Vector2i(0, 0)], [81, Vector2i(18, 0)], [9, Vector2i(0, 1)], [81, Vector2i(18, 1)], [9, Vector2i(1, 0)], [81, Vector2i(19, 0)], [9, Vector2i(1, 1)], [81, Vector2i(19, 1)], [10, Vector2i(0, 0)], [81, Vector2i(20, 0)], [10, Vector2i(0, 1)], [81, Vector2i(20, 1)], [10, Vector2i(1, 0)], [81, Vector2i(21, 0)], [10, Vector2i(1, 1)], [81, Vector2i(21, 1)], [11, Vector2i(0, 0)], [81, Vector2i(22, 0)], [11, Vector2i(0, 1)], [81, Vector2i(22, 1)], [11, Vector2i(1, 0)], [81, Vector2i(23, 0)], [11, Vector2i(1, 1)], [81, Vector2i(23, 1)], [12, Vector2i(0, 0)], [81, Vector2i(24, 0)], [12, Vector2i(0, 1)], [81, Vector2i(24, 1)], [12, Vector2i(1, 0)], [81, Vector2i(25, 0)], [12, Vector2i(1, 1)], [81, Vector2i(25, 1)], [13, Vector2i(0, 0)], [81, Vector2i(26, 0)], [13, Vector2i(0, 1)], [81, Vector2i(26, 1)], [13, Vector2i(1, 0)], [81, Vector2i(27, 0)], [13, Vector2i(1, 1)], [81, Vector2i(27, 1)], [14, Vector2i(0, 0)], [81, Vector2i(28, 0)], [14, Vector2i(0, 1)], [81, Vector2i(28, 1)], [14, Vector2i(1, 0)], [81, Vector2i(29, 0)], [14, Vector2i(1, 1)], [81, Vector2i(29, 1)], [15, Vector2i(0, 0)], [81, Vector2i(0, 2)], [15, Vector2i(0, 1)], [81, Vector2i(0, 3)], [15, Vector2i(1, 0)], [81, Vector2i(1, 2)], [15, Vector2i(1, 1)], [81, Vector2i(1, 3)], [16, Vector2i(0, 0)], [81, Vector2i(2, 2)], [16, Vector2i(0, 1)], [81, Vector2i(2, 3)], [16, Vector2i(1, 0)], [81, Vector2i(3, 2)], [16, Vector2i(1, 1)], [81, Vector2i(3, 3)], [17, Vector2i(0, 0)], [81, Vector2i(4, 2)], [17, Vector2i(1, 0)], [81, Vector2i(5, 2)], [18, Vector2i(0, 0)], [81, Vector2i(6, 2)], [18, Vector2i(0, 1)], [81, Vector2i(6, 3)], [18, Vector2i(1, 0)], [81, Vector2i(7, 2)], [18, Vector2i(1, 1)], [81, Vector2i(7, 3)], [19, Vector2i(0, 0)], [81, Vector2i(8, 2)], [19, Vector2i(0, 1)], [81, Vector2i(8, 3)], [19, Vector2i(1, 0)], [81, Vector2i(9, 2)], [19, Vector2i(1, 1)], [81, Vector2i(9, 3)], [20, Vector2i(0, 0)], [81, Vector2i(10, 2)], [20, Vector2i(0, 1)], [81, Vector2i(10, 3)], [20, Vector2i(1, 0)], [81, Vector2i(11, 2)], [20, Vector2i(1, 1)], [81, Vector2i(11, 3)], [21, Vector2i(0, 0)], [81, Vector2i(12, 2)], [21, Vector2i(0, 1)], [81, Vector2i(12, 3)], [21, Vector2i(1, 0)], [81, Vector2i(13, 2)], [21, Vector2i(1, 1)], [81, Vector2i(13, 3)], [22, Vector2i(0, 0)], [81, Vector2i(14, 2)], [22, Vector2i(0, 1)], [81, Vector2i(14, 3)], [22, Vector2i(1, 0)], [81, Vector2i(15, 2)], [22, Vector2i(1, 1)], [81, Vector2i(15, 3)], [23, Vector2i(0, 0)], [81, Vector2i(16, 2)], [23, Vector2i(0, 1)], [81, Vector2i(16, 3)], [23, Vector2i(1, 0)], [81, Vector2i(17, 2)], [23, Vector2i(1, 1)], [81, Vector2i(17, 3)], [24, Vector2i(0, 0)], [81, Vector2i(18, 2)], [24, Vector2i(0, 1)], [81, Vector2i(18, 3)], [24, Vector2i(1, 0)], [81, Vector2i(19, 2)], [24, Vector2i(1, 1)], [81, Vector2i(19, 3)], [25, Vector2i(0, 0)], [81, Vector2i(20, 2)], [25, Vector2i(0, 1)], [81, Vector2i(20, 3)], [25, Vector2i(1, 0)], [81, Vector2i(21, 2)], [25, Vector2i(1, 1)], [81, Vector2i(21, 3)], [26, Vector2i(0, 0)], [81, Vector2i(22, 2)], [26, Vector2i(1, 0)], [81, Vector2i(23, 2)], [27, Vector2i(0, 0)], [81, Vector2i(24, 2)], [27, Vector2i(0, 1)], [81, Vector2i(24, 3)], [27, Vector2i(1, 0)], [81, Vector2i(25, 2)], [27, Vector2i(1, 1)], [81, Vector2i(25, 3)], [28, Vector2i(0, 0)], [81, Vector2i(26, 2)], [28, Vector2i(0, 1)], [81, Vector2i(26, 3)], [28, Vector2i(1, 0)], [81, Vector2i(27, 2)], [28, Vector2i(1, 1)], [81, Vector2i(27, 3)], [29, Vector2i(0, 0)], [81, Vector2i(28, 2)], [29, Vector2i(0, 1)], [81, Vector2i(28, 3)], [29, Vector2i(1, 0)], [81, Vector2i(29, 2)], [29, Vector2i(1, 1)], [81, Vector2i(29, 3)], [30, Vector2i(0, 0)], [81, Vector2i(0, 4)], [30, Vector2i(0, 1)], [81, Vector2i(0, 5)], [30, Vector2i(1, 0)], [81, Vector2i(1, 4)], [30, Vector2i(1, 1)], [81, Vector2i(1, 5)], [31, Vector2i(0, 0)], [81, Vector2i(2, 4)], [31, Vector2i(0, 1)], [81, Vector2i(2, 5)], [31, Vector2i(1, 0)], [81, Vector2i(3, 4)], [31, Vector2i(1, 1)], [81, Vector2i(3, 5)], [32, Vector2i(0, 0)], [81, Vector2i(4, 4)], [32, Vector2i(0, 1)], [81, Vector2i(4, 5)], [32, Vector2i(1, 0)], [81, Vector2i(5, 4)], [32, Vector2i(1, 1)], [81, Vector2i(5, 5)], [33, Vector2i(0, 0)], [81, Vector2i(6, 4)], [33, Vector2i(0, 1)], [81, Vector2i(6, 5)], [33, Vector2i(1, 0)], [81, Vector2i(7, 4)], [33, Vector2i(1, 1)], [81, Vector2i(7, 5)], [34, Vector2i(0, 0)], [81, Vector2i(8, 4)], [34, Vector2i(0, 1)], [81, Vector2i(8, 5)], [34, Vector2i(1, 0)], [81, Vector2i(9, 4)], [34, Vector2i(1, 1)], [81, Vector2i(9, 5)], [35, Vector2i(0, 0)], [81, Vector2i(10, 4)], [35, Vector2i(0, 1)], [81, Vector2i(10, 5)], [35, Vector2i(1, 0)], [81, Vector2i(11, 4)], [35, Vector2i(1, 1)], [81, Vector2i(11, 5)], [36, Vector2i(0, 0)], [81, Vector2i(12, 4)], [36, Vector2i(0, 1)], [81, Vector2i(12, 5)], [36, Vector2i(1, 0)], [81, Vector2i(13, 4)], [36, Vector2i(1, 1)], [81, Vector2i(13, 5)], [37, Vector2i(0, 0)], [81, Vector2i(14, 4)], [37, Vector2i(0, 1)], [81, Vector2i(14, 5)], [37, Vector2i(1, 0)], [81, Vector2i(15, 4)], [37, Vector2i(1, 1)], [81, Vector2i(15, 5)], [38, Vector2i(0, 0)], [81, Vector2i(16, 4)], [38, Vector2i(0, 1)], [81, Vector2i(16, 5)], [38, Vector2i(1, 0)], [81, Vector2i(17, 4)], [38, Vector2i(1, 1)], [81, Vector2i(17, 5)], [39, Vector2i(0, 0)], [81, Vector2i(18, 4)], [39, Vector2i(0, 1)], [81, Vector2i(18, 5)], [39, Vector2i(1, 0)], [81, Vector2i(19, 4)], [39, Vector2i(1, 1)], [81, Vector2i(19, 5)], [40, Vector2i(0, 0)], [81, Vector2i(20, 4)], [40, Vector2i(0, 1)], [81, Vector2i(20, 5)], [40, Vector2i(1, 0)], [81, Vector2i(21, 4)], [40, Vector2i(1, 1)], [81, Vector2i(21, 5)], [41, Vector2i(0, 0)], [81, Vector2i(22, 4)], [41, Vector2i(0, 1)], [81, Vector2i(22, 5)], [41, Vector2i(1, 0)], [81, Vector2i(23, 4)], [41, Vector2i(1, 1)], [81, Vector2i(23, 5)], [42, Vector2i(0, 0)], [81, Vector2i(24, 4)], [42, Vector2i(0, 1)], [81, Vector2i(24, 5)], [42, Vector2i(1, 0)], [81, Vector2i(25, 4)], [42, Vector2i(1, 1)], [81, Vector2i(25, 5)], [43, Vector2i(0, 0)], [81, Vector2i(26, 4)], [43, Vector2i(0, 1)], [81, Vector2i(26, 5)], [43, Vector2i(1, 0)], [81, Vector2i(27, 4)], [43, Vector2i(1, 1)], [81, Vector2i(27, 5)], [44, Vector2i(0, 0)], [81, Vector2i(28, 4)], [44, Vector2i(0, 1)], [81, Vector2i(28, 5)], [44, Vector2i(1, 0)], [81, Vector2i(29, 4)], [44, Vector2i(1, 1)], [81, Vector2i(29, 5)], [45, Vector2i(0, 0)], [81, Vector2i(0, 6)], [45, Vector2i(0, 1)], [81, Vector2i(0, 7)], [45, Vector2i(1, 0)], [81, Vector2i(1, 6)], [45, Vector2i(1, 1)], [81, Vector2i(1, 7)], [46, Vector2i(0, 0)], [81, Vector2i(2, 6)], [46, Vector2i(0, 1)], [81, Vector2i(2, 7)], [46, Vector2i(1, 0)], [81, Vector2i(3, 6)], [46, Vector2i(1, 1)], [81, Vector2i(3, 7)], [47, Vector2i(0, 0)], [81, Vector2i(4, 6)], [47, Vector2i(0, 1)], [81, Vector2i(4, 7)], [47, Vector2i(1, 0)], [81, Vector2i(5, 6)], [47, Vector2i(1, 1)], [81, Vector2i(5, 7)], [48, Vector2i(0, 0)], [81, Vector2i(6, 6)], [48, Vector2i(0, 1)], [81, Vector2i(6, 7)], [48, Vector2i(1, 0)], [81, Vector2i(7, 6)], [48, Vector2i(1, 1)], [81, Vector2i(7, 7)], [49, Vector2i(0, 0)], [81, Vector2i(8, 6)], [49, Vector2i(0, 1)], [81, Vector2i(8, 7)], [49, Vector2i(1, 0)], [81, Vector2i(9, 6)], [49, Vector2i(1, 1)], [81, Vector2i(9, 7)], [50, Vector2i(0, 0)], [81, Vector2i(10, 6)], [50, Vector2i(0, 1)], [81, Vector2i(10, 7)], [50, Vector2i(1, 0)], [81, Vector2i(11, 6)], [50, Vector2i(1, 1)], [81, Vector2i(11, 7)], [51, Vector2i(0, 0)], [81, Vector2i(12, 6)], [51, Vector2i(0, 1)], [81, Vector2i(12, 7)], [51, Vector2i(1, 0)], [81, Vector2i(13, 6)], [51, Vector2i(1, 1)], [81, Vector2i(13, 7)], [52, Vector2i(0, 0)], [81, Vector2i(14, 6)], [52, Vector2i(0, 1)], [81, Vector2i(14, 7)], [52, Vector2i(1, 0)], [81, Vector2i(15, 6)], [52, Vector2i(1, 1)], [81, Vector2i(15, 7)], [53, Vector2i(0, 0)], [81, Vector2i(16, 6)], [53, Vector2i(0, 1)], [81, Vector2i(16, 7)], [53, Vector2i(1, 0)], [81, Vector2i(17, 6)], [53, Vector2i(1, 1)], [81, Vector2i(17, 7)], [54, Vector2i(0, 0)], [81, Vector2i(18, 6)], [54, Vector2i(0, 1)], [81, Vector2i(18, 7)], [54, Vector2i(1, 0)], [81, Vector2i(19, 6)], [54, Vector2i(1, 1)], [81, Vector2i(19, 7)], [55, Vector2i(0, 0)], [81, Vector2i(20, 6)], [55, Vector2i(0, 1)], [81, Vector2i(20, 7)], [55, Vector2i(1, 0)], [81, Vector2i(21, 6)], [55, Vector2i(1, 1)], [81, Vector2i(21, 7)], [56, Vector2i(0, 0)], [81, Vector2i(22, 6)], [56, Vector2i(0, 1)], [81, Vector2i(22, 7)], [56, Vector2i(1, 0)], [81, Vector2i(23, 6)], [56, Vector2i(1, 1)], [81, Vector2i(23, 7)], [57, Vector2i(0, 0)], [81, Vector2i(24, 6)], [57, Vector2i(0, 1)], [81, Vector2i(24, 7)], [57, Vector2i(1, 0)], [81, Vector2i(25, 6)], [57, Vector2i(1, 1)], [81, Vector2i(25, 7)], [58, Vector2i(0, 0)], [81, Vector2i(26, 6)], [58, Vector2i(0, 1)], [81, Vector2i(26, 7)], [58, Vector2i(1, 0)], [81, Vector2i(27, 6)], [58, Vector2i(1, 1)], [81, Vector2i(27, 7)], [59, Vector2i(0, 0)], [81, Vector2i(28, 6)], [59, Vector2i(0, 1)], [81, Vector2i(28, 7)], [59, Vector2i(1, 0)], [81, Vector2i(29, 6)], [59, Vector2i(1, 1)], [81, Vector2i(29, 7)], [60, Vector2i(0, 0)], [81, Vector2i(0, 8)], [60, Vector2i(0, 1)], [81, Vector2i(0, 9)], [60, Vector2i(1, 0)], [81, Vector2i(1, 8)], [60, Vector2i(1, 1)], [81, Vector2i(1, 9)], [61, Vector2i(0, 0)], [81, Vector2i(2, 8)], [61, Vector2i(0, 1)], [81, Vector2i(2, 9)], [61, Vector2i(1, 0)], [81, Vector2i(3, 8)], [61, Vector2i(1, 1)], [81, Vector2i(3, 9)], [62, Vector2i(0, 0)], [81, Vector2i(4, 8)], [62, Vector2i(0, 1)], [81, Vector2i(4, 9)], [62, Vector2i(1, 0)], [81, Vector2i(5, 8)], [62, Vector2i(1, 1)], [81, Vector2i(5, 9)], [63, Vector2i(0, 0)], [81, Vector2i(6, 8)], [63, Vector2i(0, 1)], [81, Vector2i(6, 9)], [63, Vector2i(1, 0)], [81, Vector2i(7, 8)], [63, Vector2i(1, 1)], [81, Vector2i(7, 9)], [64, Vector2i(0, 0)], [81, Vector2i(8, 8)], [64, Vector2i(0, 1)], [81, Vector2i(8, 9)], [64, Vector2i(1, 0)], [81, Vector2i(9, 8)], [64, Vector2i(1, 1)], [81, Vector2i(9, 9)], [65, Vector2i(0, 0)], [81, Vector2i(10, 8)], [65, Vector2i(0, 1)], [81, Vector2i(10, 9)], [65, Vector2i(1, 0)], [81, Vector2i(11, 8)], [65, Vector2i(1, 1)], [81, Vector2i(11, 9)], [66, Vector2i(0, 0)], [81, Vector2i(12, 8)], [66, Vector2i(0, 1)], [81, Vector2i(12, 9)], [66, Vector2i(1, 0)], [81, Vector2i(13, 8)], [66, Vector2i(1, 1)], [81, Vector2i(13, 9)], [67, Vector2i(0, 0)], [81, Vector2i(14, 8)], [67, Vector2i(0, 1)], [81, Vector2i(14, 9)], [67, Vector2i(1, 0)], [81, Vector2i(15, 8)], [67, Vector2i(1, 1)], [81, Vector2i(15, 9)], [68, Vector2i(0, 0)], [81, Vector2i(16, 8)], [68, Vector2i(0, 1)], [81, Vector2i(16, 9)], [68, Vector2i(1, 0)], [81, Vector2i(17, 8)], [68, Vector2i(1, 1)], [81, Vector2i(17, 9)], [69, Vector2i(0, 0)], [81, Vector2i(18, 8)], [69, Vector2i(0, 1)], [81, Vector2i(18, 9)], [69, Vector2i(1, 0)], [81, Vector2i(19, 8)], [69, Vector2i(1, 1)], [81, Vector2i(19, 9)], [70, Vector2i(0, 0)], [81, Vector2i(20, 8)], [70, Vector2i(0, 1)], [81, Vector2i(20, 9)], [70, Vector2i(1, 0)], [81, Vector2i(21, 8)], [70, Vector2i(1, 1)], [81, Vector2i(21, 9)], [71, Vector2i(0, 0)], [81, Vector2i(22, 8)], [71, Vector2i(1, 0)], [81, Vector2i(23, 8)], [72, Vector2i(0, 0)], [81, Vector2i(24, 8)], [72, Vector2i(0, 1)], [81, Vector2i(24, 9)], [72, Vector2i(1, 0)], [81, Vector2i(25, 8)], [72, Vector2i(1, 1)], [81, Vector2i(25, 9)], [73, Vector2i(0, 0)], [81, Vector2i(26, 8)], [73, Vector2i(1, 0)], [81, Vector2i(27, 8)], [74, Vector2i(0, 0)], [81, Vector2i(28, 8)], [74, Vector2i(1, 0)], [81, Vector2i(29, 8)], [75, Vector2i(0, 0)], [81, Vector2i(0, 10)], [75, Vector2i(1, 0)], [81, Vector2i(1, 10)], [76, Vector2i(0, 0)], [81, Vector2i(2, 10)], [76, Vector2i(1, 0)], [81, Vector2i(3, 10)], [77, Vector2i(0, 0)], [81, Vector2i(4, 10)], [77, Vector2i(1, 0)], [81, Vector2i(5, 10)], [78, Vector2i(0, 0)], [81, Vector2i(6, 10)], [78, Vector2i(1, 0)], [81, Vector2i(7, 10)], [79, Vector2i(0, 0)], [81, Vector2i(8, 10)], [79, Vector2i(1, 0)], [81, Vector2i(9, 10)], [80, Vector2i(0, 0)], [81, Vector2i(10, 10)], [80, Vector2i(1, 0)], [81, Vector2i(11, 10)]]
+
+[sub_resource type="GDScript" id="GDScript_5mhml"]
+script/source = "extends TileMapLayer
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready() -> void:
+	pass # Replace with function body.
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta: float) -> void:
+	pass"
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ppgk2"]
+size = Vector2(69.00002, 299)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2r41h"]
+size = Vector2(60, 290.33334)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2k3dv"]
+size = Vector2(20.999996, 106.47903)
+
+[sub_resource type="GDScript" id="GDScript_b72m1"]
+script/source = "extends StaticBody2D
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready() -> void:
+	pass # Replace with function body.
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta: float) -> void:
+	pass
+"
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_yqkch"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_6qt4k")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6ep0u"]
+size = Vector2(13, 28.333342)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5mhml"]
+size = Vector2(4.6666527, 21.333344)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fh4ka"]
+atlas = ExtResource("8_fh4ka")
+region = Rect2(0, 0, 16, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qewby"]
+atlas = ExtResource("8_fh4ka")
+region = Rect2(16, 0, 16, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bradm"]
+atlas = ExtResource("8_fh4ka")
+region = Rect2(32, 0, 16, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_got4s"]
+atlas = ExtResource("8_fh4ka")
+region = Rect2(48, 0, 16, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_e40mx"]
+atlas = ExtResource("8_fh4ka")
+region = Rect2(64, 0, 16, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_a114e"]
+atlas = ExtResource("8_fh4ka")
+region = Rect2(80, 0, 16, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_y1e0c"]
+atlas = ExtResource("8_fh4ka")
+region = Rect2(96, 0, 16, 48)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_hrcei"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fh4ka")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qewby")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bradm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_got4s")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_e40mx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_a114e")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_y1e0c")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xa7n4"]
+size = Vector2(13.666687, 30.333336)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qewby"]
+size = Vector2(24, 9.666664)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bradm"]
+size = Vector2(24, 9.666664)
+
+[node name="Level" type="Node2D" unique_id=771642976]
+scale = Vector2(3, 3)
+script = ExtResource("1_b72m1")
+nextScene = "victory"
+
+[node name="Background" type="Sprite2D" parent="." unique_id=1587705976]
+texture_filter = 1
+position = Vector2(213.92596, 120.416664)
+scale = Vector2(0.73816884, 0.7381687)
+texture = ExtResource("2_5mhml")
+
+[node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=321755521]
+texture_filter = 1
+tile_map_data = PackedByteArray("AAAAAAwAUQASAAYAAAABAAwAUQAXAAYAAAACAAwAUQAUAAYAAAADAAwAUQASAAYAAAAAAA0AUQASAAcAAAABAA0AUQAXAAcAAAACAA0AUQAVAAcAAAADAA0AUQASAAcAAAAAAAUAUQASAAYAAAABAAUAUQAXAAYAAAACAAUAUQAUAAYAAAADAAUAUQASAAYAAAAEAAUAUQAXAAYAAAAAAAYAUQASAAcAAAABAAYAUQAXAAcAAAACAAYAUQAVAAcAAAADAAYAUQASAAcAAAAEAAYAUQAXAAcAAAAEAAwAUQAXAAYAAAAEAA0AUQAXAAcAAAAHAAgAUQAUAAYAAAAIAAgAUQAVAAYAAAAJAAgAUQAUAAYAAAAKAAgAUQAVAAYAAAAHAAkAUQAUAAcAAAAIAAkAUQAVAAcAAAAJAAkAUQAUAAcAAAAKAAkAUQAVAAcAAAAHAAQAUQAUAAcAAAAIAAQAUQAVAAcAAAAJAAQAUQAUAAcAAAAKAAQAUQAVAAcAAAAHAAMAUQAUAAYAAAAIAAMAUQAVAAYAAAAJAAMAUQAUAAYAAAAKAAMAUQAVAAYAAAALAAMAUQAUAAYAAAALAAQAUQAUAAcAAAAMAAMAUQAVAAYAAAAMAAQAUQAVAAcAAAANAAMAUQAUAAYAAAANAAQAUQAUAAcAAAAOAAMAUQAVAAYAAAAOAAQAUQAVAAcAAAATAAQAUQAVAAYAAAAUAAQAUQAUAAYAAAAVAAQAUQAVAAYAAAASAAQAUQAUAAYAAAASAAUAUQAUAAcAAAATAAUAUQAVAAcAAAAUAAUAUQAUAAcAAAAVAAUAUQAVAAcAAAALAAgAUQAUAAYAAAALAAkAUQAUAAcAAAAMAAgAUQAVAAYAAAAMAAkAUQAVAAcAAAANAAgAUQAUAAYAAAANAAkAUQAUAAcAAAAOAAgAUQAVAAYAAAAOAAkAUQAVAAcAAAA=")
+tile_set = SubResource("TileSet_w8frs")
+
+[node name="TileMapLayer2" type="TileMapLayer" parent="." unique_id=2036692032]
+texture_filter = 1
+tile_map_data = PackedByteArray("AAAQAAMAUQATAAYAAAAQAAQAUQATAAcAAAARAAMAUQAXAAYAAAARAAQAUQAXAAcAAAAPAAMAUQASAAYAAAAPAAQAUQASAAcAAAA=")
+tile_set = SubResource("TileSet_w8frs")
+script = SubResource("GDScript_5mhml")
+
+[node name="Positive" parent="." unique_id=293239450 groups=["player"] instance=ExtResource("4_6qt4k")]
+position = Vector2(24, 156.66666)
+collision_mask = 2
+metadata/_edit_group_ = true
+
+[node name="Negative" parent="." unique_id=223513881 groups=["player"] instance=ExtResource("4_6qt4k")]
+position = Vector2(28, 28.666672)
+collision_mask = 2
+player = "p2"
+sign = 1
+metadata/_edit_group_ = true
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=321900836]
+position = Vector2(43.333336, -8.666667)
+collision_layer = 2
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=943935045]
+position = Vector2(-76.500015, 127.166664)
+shape = SubResource("RectangleShape2D_ppgk2")
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="." unique_id=905081940]
+position = Vector2(43.333336, -8.666667)
+collision_layer = 2
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2" unique_id=369395422]
+position = Vector2(403.33334, 139.50005)
+shape = SubResource("RectangleShape2D_2r41h")
+
+[node name="Field" type="Area2D" parent="." unique_id=1414164506]
+position = Vector2(-20.333334, 78.00002)
+script = ExtResource("5_fh4ka")
+field_direction = Vector2(0, 1)
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Field" unique_id=1705421866]
+position = Vector2(118.33334, 63.666668)
+shape = SubResource("RectangleShape2D_2k3dv")
+
+[node name="ColorRect2" type="ColorRect" parent="Field" unique_id=1641256498]
+offset_left = 107.666664
+offset_top = 14.333313
+offset_right = 129.33334
+offset_bottom = 115.66665
+color = Color(1, 0.8745098, 0.28235295, 0.3882353)
+
+[node name="Positive Plate" type="StaticBody2D" parent="." unique_id=556772361]
+position = Vector2(239.33331, 77.00002)
+rotation = 1.5707964
+collision_layer = 2
+script = SubResource("GDScript_b72m1")
+
+[node name="Positive Plate" type="AnimatedSprite2D" parent="Positive Plate" unique_id=2014802467]
+texture_filter = 1
+position = Vector2(10.99999, 142.99998)
+sprite_frames = SubResource("SpriteFrames_yqkch")
+autoplay = "default"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Positive Plate" unique_id=49915377]
+position = Vector2(10.500002, 140.50003)
+shape = SubResource("RectangleShape2D_6ep0u")
+
+[node name="Area2D" type="Area2D" parent="Positive Plate" unique_id=1291497027 node_paths=PackedStringArray("field")]
+script = ExtResource("7_5mhml")
+field = NodePath("../../Field")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Positive Plate/Area2D" unique_id=652635519]
+position = Vector2(1.3332977, 140.99997)
+shape = SubResource("RectangleShape2D_5mhml")
+
+[node name="Negative Plate" type="StaticBody2D" parent="." unique_id=1008240666]
+position = Vector2(237.99998, -207.3333)
+rotation = 1.5707964
+collision_layer = 2
+metadata/_edit_group_ = true
+
+[node name="Negative Plate" type="AnimatedSprite2D" parent="Negative Plate" unique_id=2018889769]
+texture_filter = 1
+position = Vector2(407, 139.66667)
+sprite_frames = SubResource("SpriteFrames_hrcei")
+autoplay = "default"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Negative Plate" unique_id=283154588]
+position = Vector2(406.83334, 140.5)
+shape = SubResource("RectangleShape2D_xa7n4")
+
+[node name="Field2" type="Area2D" parent="." unique_id=1254726713]
+position = Vector2(143.66667, 27.666689)
+script = ExtResource("5_fh4ka")
+field_direction = Vector2(0, 1)
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Field2" unique_id=2062996421]
+position = Vector2(118.83333, 58.906155)
+shape = SubResource("RectangleShape2D_2k3dv")
+
+[node name="ColorRect" type="ColorRect" parent="Field2" unique_id=717699488]
+offset_left = 107.66667
+offset_top = 4.999977
+offset_right = 129.66667
+offset_bottom = 110.99998
+color = Color(1, 0.8745098, 0.28235295, 0.3882353)
+
+[node name="Positive Plate2" type="StaticBody2D" parent="." unique_id=1342862394]
+position = Vector2(403.3333, 17)
+rotation = 1.5707964
+collision_layer = 2
+script = SubResource("GDScript_b72m1")
+
+[node name="Positive Plate" type="AnimatedSprite2D" parent="Positive Plate2" unique_id=1680196698]
+texture_filter = 1
+position = Vector2(10.333339, 142.33334)
+sprite_frames = SubResource("SpriteFrames_yqkch")
+autoplay = "default"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Positive Plate2" unique_id=774997541]
+position = Vector2(10.500002, 140.50003)
+shape = SubResource("RectangleShape2D_6ep0u")
+
+[node name="Area2D" type="Area2D" parent="Positive Plate2" unique_id=1666511205 node_paths=PackedStringArray("field", "block")]
+script = ExtResource("7_5mhml")
+field = NodePath("../../Field2")
+block = NodePath("../../TileMapLayer2")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Positive Plate2/Area2D" unique_id=2104089402]
+position = Vector2(1.3332977, 140.99997)
+shape = SubResource("RectangleShape2D_5mhml")
+
+[node name="Negative Plate2" type="StaticBody2D" parent="." unique_id=1396285329]
+position = Vector2(402.66663, -262)
+rotation = 1.5707964
+collision_layer = 2
+metadata/_edit_group_ = true
+
+[node name="Negative Plate" type="AnimatedSprite2D" parent="Negative Plate2" unique_id=264316059]
+texture_filter = 1
+position = Vector2(407, 139.66667)
+sprite_frames = SubResource("SpriteFrames_hrcei")
+autoplay = "default"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Negative Plate2" unique_id=316636413]
+position = Vector2(406.83334, 140.5)
+shape = SubResource("RectangleShape2D_xa7n4")
+
+[node name="Area2D2" type="Area2D" parent="." unique_id=1503381224]
+position = Vector2(-94, -145.33334)
+script = ExtResource("9_6qt4k")
+metadata/_edit_group_ = true
+
+[node name="PosFinal" type="Sprite2D" parent="Area2D2" unique_id=1233171152]
+texture_filter = 1
+position = Vector2(399.66666, 198.66669)
+scale = Vector2(0.6875, 0.6875)
+texture = ExtResource("10_fh4ka")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D2" unique_id=520923722]
+position = Vector2(399.6667, 201.16667)
+shape = SubResource("RectangleShape2D_qewby")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1734588574]
+position = Vector2(-61.666668, -144)
+script = ExtResource("9_6qt4k")
+sign = 1
+metadata/_edit_group_ = true
+
+[node name="NegFinal" type="Sprite2D" parent="Area2D" unique_id=523589641]
+texture_filter = 1
+position = Vector2(398.3333, 198.33336)
+scale = Vector2(0.6666657, 0.6666657)
+texture = ExtResource("11_fh4ka")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=54725888]
+position = Vector2(399.6667, 201.16667)
+shape = SubResource("RectangleShape2D_bradm")
+
+[node name="PokémonSword&ShieldGymLeaderPiersBattleMusic(hq)" type="AudioStreamPlayer2D" parent="." unique_id=2146876670]
+position = Vector2(210.33334, 503.33334)
+stream = ExtResource("12_qewby")
+autoplay = true
+
+[connection signal="body_entered" from="Field" to="Field" method="_on_body_entered"]
+[connection signal="body_exited" from="Field" to="Field" method="_on_body_exited"]
+[connection signal="body_entered" from="Positive Plate/Area2D" to="Positive Plate/Area2D" method="_on_body_entered"]
+[connection signal="body_exited" from="Positive Plate/Area2D" to="Positive Plate/Area2D" method="_on_body_exited"]
+[connection signal="body_entered" from="Field2" to="Field2" method="_on_body_entered"]
+[connection signal="body_exited" from="Field2" to="Field2" method="_on_body_exited"]
+[connection signal="body_entered" from="Positive Plate2/Area2D" to="Positive Plate2/Area2D" method="_on_body_entered"]
+[connection signal="body_exited" from="Positive Plate2/Area2D" to="Positive Plate2/Area2D" method="_on_body_exited"]
+[connection signal="body_entered" from="Area2D2" to="Area2D2" method="_on_body_entered"]
+[connection signal="body_exited" from="Area2D2" to="Area2D2" method="_on_body_exited"]
+[connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]
+[connection signal="body_exited" from="Area2D" to="Area2D" method="_on_body_exited"]

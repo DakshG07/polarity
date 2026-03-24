@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://drhyafr06eimm"
+path="res://.godot/imported/Pokémon Sword & Shield - Gym Leader Piers Battle Music (HQ).mp3-f38ac650a71d7d7e421935f23dbe2e18.mp3str"
+
+[deps]
+
+source_file="res://assets/audio/Pokémon Sword & Shield - Gym Leader Piers Battle Music (HQ).mp3"
+dest_files=["res://.godot/imported/Pokémon Sword & Shield - Gym Leader Piers Battle Music (HQ).mp3-f38ac650a71d7d7e421935f23dbe2e18.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
